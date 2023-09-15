@@ -1,6 +1,7 @@
-## Available Scripts
 
 # Made Twitter Clone with MERN Stack
+
+## Available Scripts
 
 In the project directory, you can go to client directory by doing cd client/ :
 
