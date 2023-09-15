@@ -1,5 +1,7 @@
 ## Available Scripts
 
+# Made Twitter Clone with MERN Stack
+
 In the project directory, you can go to client directory by doing cd client/ :
 
 npm install to install all necessary packages
