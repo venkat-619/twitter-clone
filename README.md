@@ -31,11 +31,15 @@ $ PORT=
 $ DB_URL=
 
 $ JWT_SECRET=
+
 $ JWT_EXPIRY=
+
 $ COOKIE_TIME=
 
 $ CLOUDINARY_NAME=
+
 $ CLOUDINARY_API_KEY=
+
 $ CLOUDINARY_API_SECRET=
 
 
@@ -43,7 +47,10 @@ $ CLOUDINARY_API_SECRET=
 
 Technologies used are 
 
-React
-Express
-MongoDB
-Node.js
+$ React
+
+$ Express
+
+$ MongoDB
+
+$ Node.js
