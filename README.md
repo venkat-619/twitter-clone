@@ -3,7 +3,7 @@
 In the project directory, you can go to client directory by doing cd client/ :
 
 npm install to install all necessary packages
-# npm install
+### npm install
 
 Then run 
 ### `npm start`
@@ -14,7 +14,7 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 For backend open one more terminal, now go to server by doing cd server/ from project directory
 npm install to install all necessary packages
 
-# npm install
+### npm install
 
 Then run
 ### `npm start`
