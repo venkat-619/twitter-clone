@@ -3,7 +3,8 @@ import Button from '@mui/material/Button';
 import React, { useState } from 'react'
 import './TweetBox.css'
 // import db from './firebase'
-const API_BASE="http://localhost:4000";
+// const API_BASE="http://localhost:4000";
+const API_BASE="https://twitter-clone-mocha-xi.vercel.app/";
 
 function TweetBox() {
     const [tweetMessage, setTweetMessage] = useState("");

@@ -1,7 +1,8 @@
 import React from 'react';
 import {useNavigate} from "react-router-dom";
 import App from '../App';
-const API_BASE="http://localhost:4000";
+// const API_BASE="http://localhost:4000";
+const API_BASE="https://twitter-clone-mocha-xi.vercel.app/";
 
 const useAuth = async () => {
     

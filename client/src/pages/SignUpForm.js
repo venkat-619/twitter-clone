@@ -8,7 +8,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCircleInfo } from "@fortawesome/free-solid-svg-icons";
 import { Link, useNavigate} from "react-router-dom";
 
-const API_BASE="http://localhost:4000";
+// const API_BASE="http://localhost:4000";
+const API_BASE="https://twitter-clone-mocha-xi.vercel.app/";
 
 const SignUpForm = () => {
     const [data, setData] = useState({
