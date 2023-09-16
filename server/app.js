@@ -45,5 +45,9 @@ const tweet = require('./routes/tweet');
 app.use('/api/v1', user);
 app.use('/api/v1', tweet);
 
+app.get("/", (req, res) => {
+    res.send('Hello From Backend!!!');
+});
+
 // export app js
 module.exports = app;
