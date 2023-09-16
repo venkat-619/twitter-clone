@@ -8,6 +8,8 @@
 Deployment version of project is  https://twitter-clone-frontend-git-master-venkat-619.vercel.app/
 
 
+## Deployment
+
 In the project directory, you can go to client directory by doing cd client/ :
 
 npm install to install all necessary packages
