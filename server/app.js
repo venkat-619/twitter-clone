@@ -35,6 +35,10 @@ app.use(cors({
 // morgan middleware
 app.use(morgan('tiny'));
 
+app.get("/", (req, res) => {
+    res.send('Hello From Backend!!!');
+});
+
 
 // import all routes here
 const user = require('./routes/user');
@@ -45,9 +49,6 @@ const tweet = require('./routes/tweet');
 app.use('/api/v1', user);
 app.use('/api/v1', tweet);
 
-app.get("/", (req, res) => {
-    res.send('Hello From Backend!!!');
-});
 
 // export app js
 module.exports = app;
