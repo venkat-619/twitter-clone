@@ -21,8 +21,14 @@ app.use(fileUpload({
     useTempFiles: true,
     tempFileDir: "/tmp/",
 }));
+
+// app.use(cors({
+//     origin: 'http://localhost:3000',
+//     credentials: true
+// }));
+
 app.use(cors({
-    origin: 'http://localhost:3000',
+    origin: 'https://twitter-clone-mocha-xi.vercel.app/',
     credentials: true
 }));
 
