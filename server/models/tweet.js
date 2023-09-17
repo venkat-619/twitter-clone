@@ -19,6 +19,9 @@ const tweetSchema = new mongoose.Schema({
     username: {
         type: String
     },
+    user_photo_url : {
+        type: String
+    },
     user: {
         type: mongoose.Schema.ObjectId,
         ref: 'User',

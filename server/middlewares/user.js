@@ -6,7 +6,6 @@ const jwt = require('jsonwebtoken');
 exports.isLoggedIn = BigPromise(async (req, res, next) => {
     // header is for mobile sometimes comes from mobile thorugh headers
     // const token = req.cookies.token || req.header('Authorization').replace('Bearer ', '');
-    console.log(req.cookies.token);
     const token = req.cookies.token;
 
     if(!token) {
