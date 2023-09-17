@@ -52,6 +52,7 @@ const ProtectedRoutes = () => {
                 // navigation logic 
             } catch (error) {
                 navigate("/");
+                return;
             }
         }
 
