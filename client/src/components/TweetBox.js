@@ -4,7 +4,7 @@ import React, { useState } from 'react'
 import './TweetBox.css'
 // import db from './firebase'
 // const API_BASE="http://localhost:4000";
-const API_BASE="https://twitter-backend-murex.vercel.app/";
+const API_BASE="https://twitter-backend-murex.vercel.app";
 
 function TweetBox() {
     const [tweetMessage, setTweetMessage] = useState("");
