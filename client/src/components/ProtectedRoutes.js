@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {useNavigate} from "react-router-dom";
 import App from '../App';
 // const API_BASE="http://localhost:4000";
@@ -27,11 +27,39 @@ const useAuth = async () => {
     }
 }
 
+// const ProtectedRoutes = () => {
+//     const navigate = useNavigate();
+//     const isAuth = useAuth();
+
+//     return isAuth ? (<App />) : (navigate("/"));
+// }
 const ProtectedRoutes = () => {
     const navigate = useNavigate();
-    const isAuth = useAuth();
 
-    return isAuth ? (<App />) : (navigate("/"));
+    useEffect(() => {
+        const checkAuth = async () => {
+            try {
+                const response = await fetch(API_BASE + '/api/v1/userdashboard', {
+                    method: "GET",
+                    credentials: "include"
+                });
+
+                if(!response.ok) {
+                navigate("/"); 
+                return;
+                }
+
+                // navigation logic 
+            } catch (error) {
+                navigate("/");
+            }
+        }
+
+        checkAuth();
+
+    }, [navigate]);
+
+    return <App/>;
 }
 
 export default ProtectedRoutes;
