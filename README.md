@@ -5,7 +5,7 @@
 
 ## Deployment
 
-Deployment version of project is  https://twitter-clone-frontend-git-master-venkat-619.vercel.app/
+Deployment version of project is  https://twitter-clone-frontend-ebon.vercel.app/
 
 
 ## Local Setup
