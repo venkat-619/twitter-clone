@@ -35,6 +35,7 @@ const useAuth = async () => {
 // }
 const ProtectedRoutes = () => {
     const navigate = useNavigate();
+    const [isLoading, setLoading] = useState(true);
 
     useEffect(() => {
         const checkAuth = async () => {
@@ -49,6 +50,8 @@ const ProtectedRoutes = () => {
                 return;
                 }
 
+                setLoading(false);
+
                 // navigation logic 
             } catch (error) {
                 navigate("/");
@@ -60,7 +63,10 @@ const ProtectedRoutes = () => {
 
     }, [navigate]);
 
-    return <App/>;
+    if(!isLoading){
+        return <App/>;
+    }
+    
 }
 
 export default ProtectedRoutes;
