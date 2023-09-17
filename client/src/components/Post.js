@@ -13,14 +13,21 @@ const  Post = forwardRef(
         username,
         verified, 
         text, 
+        image,
+        avatar
 }, ref) => {
     return (
         <div className = "post" ref={ref}>
             <div className = "post__avatar">
-                <Avatar 
-                    // src = {avatar}
-                    src = "https://res.cloudinary.com/ddxco6opc/image/upload/v1691867097/statuscode/sh7iwxyinjjnq2njkugv.jpg"
-                />
+            { avatar !== null ?  (
+                        <Avatar 
+                            src = {avatar}
+                    />
+                    ) : <Avatar 
+                        src = {avatar}
+                    />
+            }
+                
             </div>
             <div className = "post__body">
                 <div className = "post__header">
@@ -37,11 +44,17 @@ const  Post = forwardRef(
                         <p>{text}</p>
                     </div>
                 </div>
-                <img 
-                    // src = {image}
+                { image !== null ?  (
+                        <img 
+                            src = {image}
+                            alt = ""
+                        />
+                    ) : null}
+                {/* <img 
+                    src = {image}
                     src = "https://res.cloudinary.com/ddxco6opc/image/upload/v1691867097/statuscode/sh7iwxyinjjnq2njkugv.jpg"
                     alt = ""
-                />
+                /> */}
                 <div className = "post__footer">
                     <ChatBubbleOutlineIcon fontSize = "small" /> 
                     <RepeatIcon fontSize = "small" />

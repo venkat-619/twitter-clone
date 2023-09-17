@@ -30,30 +30,26 @@ const SignUpForm = () => {
         try {
             e.preventDefault();
             
-            const formData = {
-                name: data.name,
-                email: data.email,
-                country: data.country,
-                username: data.username,
-                phoneNumber: data.phoneNumber,
-                password: data.password,
-                // files: file
-            };
-
-            // console.log(file);
+            const formData = new FormData();
+            formData.append('file', file);
+            formData.append('name', data.name);
+            formData.append('email', data.email);
+            formData.append('country', data.country);
+            formData.append('username', data.username);
+            formData.append('phoneNumber', data.phoneNumber);
+            formData.append('password', data.password);
             
-            const formDataJSON = JSON.stringify(formData);
+            // const formDataJSON = JSON.stringify(formData);
             // console.log(formDataJSON);
-            // formData.append("photo", file);
-            
             
             // console.log(formData);
             const response = await fetch(API_BASE + '/api/v1/signup', {
                 method: "POST",
-                headers: {
-                    'Content-Type' : "application/json"
-                },
-                body : formDataJSON,
+                // headers: {
+                //     'Content-Type' : "application/json"
+                // },
+                // body : formDataJSON,
+                body : formData,
                 credentials: "include",
             });
 
@@ -132,10 +128,10 @@ const SignUpForm = () => {
                     onChange={(item => setData({...data, password:item.target.value}))}
                     required
                 />
-                {/* <p className="photoName">Photo</p>
-                <input type="file" placeholder="Photo" name="Photo" accept="image/*"
+                <p className="photoName">Photo</p>
+                <input type="file" placeholder="Photo" name="file" accept="image/*"
                     onChange={(e) => setFile(e.target.files[0])} 
-                /> */}
+                />
                 <button className="btn-next" type="submit">Sign Up</button>
                 {errorMessage && <div className="error"> {errorMessage} </div>}
             </form>

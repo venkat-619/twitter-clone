@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState} from 'react';
 import {useNavigate} from "react-router-dom";
 import App from '../App';
 // const API_BASE="http://localhost:4000";
@@ -36,6 +36,7 @@ const useAuth = async () => {
 const ProtectedRoutes = () => {
     const navigate = useNavigate();
     const [isLoading, setLoading] = useState(true);
+    const [photo, setPhoto] = useState("");
 
     useEffect(() => {
         const checkAuth = async () => {
@@ -50,10 +51,14 @@ const ProtectedRoutes = () => {
                 return;
                 }
 
+                const convertedRespones = await response.json();
+                setPhoto(convertedRespones.user.photo.secure_url);
+
                 setLoading(false);
 
                 // navigation logic 
             } catch (error) {
+                console.log(error);
                 navigate("/");
                 return;
             }
@@ -64,7 +69,7 @@ const ProtectedRoutes = () => {
     }, [navigate]);
 
     if(!isLoading){
-        return <App/>;
+        return <App photo={photo}/>;
     }
     
 }

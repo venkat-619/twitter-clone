@@ -6,7 +6,7 @@ import FlipMove from 'react-flip-move'
 // const API_BASE="http://localhost:4000";
 const API_BASE="https://twitter-backend-murex.vercel.app";
 
-function Feed() {
+function Feed({photo}) {
     const [posts, setPosts] = useState({
         tweets: [],
         countTweets: 0
@@ -35,7 +35,7 @@ function Feed() {
                 <h2>Home</h2>
             </div>
 
-            <TweetBox />
+            <TweetBox photo={photo}/>
             {/* <Post />
             <Post />
             <Post />
@@ -49,7 +49,8 @@ function Feed() {
                     username = {post.username}
                     verified = {true}
                     text = {post.tweet_text}
-                    // image = {post.tweet_image.secure_url}
+                    image = {post.tweet_image.secure_url}
+                    avatar = {post.user_photo_url}
                     />
                 ))}
             </FlipMove>   

@@ -2,11 +2,12 @@ import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import React, { useState } from 'react'
 import './TweetBox.css'
+import ProtectedRoutes from './ProtectedRoutes';
 // import db from './firebase'
 // const API_BASE="http://localhost:4000";
 const API_BASE="https://twitter-backend-murex.vercel.app";
 
-function TweetBox() {
+function TweetBox({photo}) {
     const [tweetMessage, setTweetMessage] = useState("");
     // const [tweetImage, setTweetImage] = useState("");
     const [file, setFile] = useState(null);
@@ -17,7 +18,7 @@ function TweetBox() {
         try {
             e.preventDefault();
             const formData = new FormData();
-            // formData.append('file', file);
+            formData.append('file', file);
             formData.append('tweet_text', tweetMessage);
 
             // fetch('/upload', {
@@ -44,13 +45,15 @@ function TweetBox() {
         setTweetMessage("");
         setFile();
     }
+    console.log(ProtectedRoutes.photo);
 
     return (
-        <div className = "tweetBox">
+        <div className = "tweetBox" on>
             <form>
                 <div className = "tweetBox__input">
                     <Avatar
-                        src = "https://res.cloudinary.com/ddxco6opc/image/upload/v1691867097/statuscode/sh7iwxyinjjnq2njkugv.jpg"
+                        src = {photo}
+                        // src = "https://res.cloudinary.com/ddxco6opc/image/upload/v1691867097/statuscode/sh7iwxyinjjnq2njkugv.jpg"
                     />
                     <input 
                         onChange = {(e) => setTweetMessage(e.target.value)}
